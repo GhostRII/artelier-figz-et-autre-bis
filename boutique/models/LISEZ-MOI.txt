@@ -1,0 +1,16 @@
+DEPOSE TES MODELES 3D ICI
+=========================
+
+Formats : .glb (ideal). Noms EXACTS attendus par le site :
+
+  helmet.glb   -> The Helmet
+  spark.glb    -> The Spark
+  core.glb     -> The Core
+  racer.glb    -> Racer Spirit
+
+Tant qu'un fichier est absent, la figurine SVG s'affiche a la place (repli auto).
+
+IMPORTANT : ouvre le site via un petit serveur local (sinon les .glb ne se chargent pas) :
+  1) ouvrir un terminal dans le dossier 'Nouveau dossier'
+  2) taper :  python -m http.server 8000
+  3) aller sur :  http://localhost:8000/accueil.html

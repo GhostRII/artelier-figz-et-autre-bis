@@ -1,0 +1,7 @@
+@keyframes cellIn { from{opacity:0; transform:scale(.98)} to{opacity:1; transform:scale(1)} }
+
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+@keyframes charge { 0%,100%{opacity:.22} 42%{opacity:1} 72%{opacity:.45} }
+
+@keyframes beat { 0%,100%{opacity:.8} 50%{opacity:1} }
