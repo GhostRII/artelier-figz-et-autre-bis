@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>THE HELMET — Collectible Art Toys</title>
+<link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="animations/base.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav" id="navbar">
+  <a class="brand" href="#hero">
+    <span class="brand-badge"><span>H</span></span>
+    <span class="brand-name">THE&nbsp;HELMET</span>
+  </a>
+  <nav class="links" id="navLinks">
+    <a class="back-boutique" href="../index.html">← Boutique</a>
+    <a href="univers.html">Univers</a>
+    <a href="concept.html">Concept</a>
+    <a href="finitions.html">Finitions</a>
+    <a href="vehicules.html">Véhicules</a>
+    <a href="formats.html">Formats</a>
+    <a href="configurateur.html">Configurateur</a>
+    <a class="nav-cta" href="#journey">Coming Soon</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="hero-grid">
+
+    <!-- LEFT : values -->
+    <div class="values">
+      <div class="value"><span class="value-icon"><!--heart-->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-9C.8 8.6 2.5 5 6 5c2 0 3 1.2 4 2.5C11 6.2 12 5 14 5c3.5 0 5.2 3.6 3.5 7-2.5 4.5-9.5 9-9.5 9z"/></svg>
+      </span><span class="value-label">PASSION</span></div>
+
+      <div class="value"><span class="value-icon"><!--shield-->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5l8-3z"/></svg>
+      </span><span class="value-label">PROTECTION</span></div>
+
+      <div class="value"><span class="value-icon"><!--energy-->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+      </span><span class="value-label">ENERGY</span></div>
+
+      <div class="value"><span class="value-icon"><!--star-->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9L12 3z"/></svg>
+      </span><span class="value-label">DESIGN</span></div>
+
+      <div class="value"><span class="value-icon"><!--globe-->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg>
+      </span><span class="value-label">UNIVERSAL</span></div>
+
+      <div class="value"><span class="value-icon"><!--crown-->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7l4 4 5-6 5 6 4-4v11H3V7z"/></svg>
+      </span><span class="value-label">ICONIC</span></div>
+    </div>
+
+    <!-- CENTER : title + figure -->
+    <div class="hero-center">
+      <span class="eyebrow">One soul. Infinite worlds.</span>
+      <h1 class="hero-title">THE HELMET</h1>
+      <div class="hero-sub">COLLECTIBLE ART TOYS</div>
+
+      <div class="figure-stage">
+        <model-viewer class="mv3d mv-interactive" src="../models/helmet.glb" alt="The Helmet" camera-controls auto-rotate rotation-per-second="20deg" disable-zoom shadow-intensity="0.8" exposure="1.05" environment-image="neutral" interaction-prompt="none" poster=""></model-viewer>
+        <div class="gold-ring"></div>
+        <!-- Helmet character drawn in SVG -->
+        <svg class="helmet-svg fig-fallback" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="helmShine" cx="35%" cy="28%" r="75%">
+              <stop offset="0%" stop-color="#3a3a40"/>
+              <stop offset="55%" stop-color="#161618"/>
+              <stop offset="100%" stop-color="#000"/>
+            </radialGradient>
+            <linearGradient id="visor" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#caa64a"/>
+              <stop offset="100%" stop-color="#5e4413"/>
+            </linearGradient>
+            <radialGradient id="heartG" cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#fff3cf"/>
+              <stop offset="60%" stop-color="#f0c869"/>
+              <stop offset="100%" stop-color="#b88a2e"/>
+            </radialGradient>
+            <linearGradient id="bodyG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1e1e22"/>
+              <stop offset="100%" stop-color="#050506"/>
+            </linearGradient>
+          </defs>
+
+          <!-- legs -->
+          <rect x="74" y="206" width="20" height="34" rx="9" fill="url(#bodyG)"/>
+          <rect x="106" y="206" width="20" height="34" rx="9" fill="url(#bodyG)"/>
+          <ellipse cx="84" cy="244" rx="16" ry="8" fill="#0c0c0d" stroke="#caa64a" stroke-width="1.5"/>
+          <ellipse cx="116" cy="244" rx="16" ry="8" fill="#0c0c0d" stroke="#caa64a" stroke-width="1.5"/>
+
+          <!-- arms -->
+          <rect x="34" y="120" width="20" height="60" rx="10" fill="url(#bodyG)"/>
+          <rect x="146" y="120" width="20" height="60" rx="10" fill="url(#bodyG)"/>
+          <circle cx="44" cy="186" r="13" fill="#0c0c0d" stroke="#caa64a" stroke-width="1.5"/>
+          <circle cx="156" cy="186" r="13" fill="#0c0c0d" stroke="#caa64a" stroke-width="1.5"/>
+
+          <!-- body -->
+          <rect x="58" y="116" width="84" height="100" rx="26" fill="url(#bodyG)" stroke="#1c1c1f"/>
+          <rect x="58" y="150" width="84" height="6" fill="#caa64a" opacity=".55"/>
+          <!-- glowing heart -->
+          <path d="M100 150 C95 142 82 143 82 154 C82 164 100 176 100 176 C100 176 118 164 118 154 C118 143 105 142 100 150 Z" fill="url(#heartG)">
+            <animate attributeName="opacity" values="0.75;1;0.75" dur="1.6s" repeatCount="indefinite"/>
+          </path>
+
+          <!-- neck -->
+          <rect x="84" y="104" width="32" height="20" rx="8" fill="#0c0c0d" stroke="#caa64a" stroke-width="1.2"/>
+
+          <!-- helmet head -->
+          <circle cx="100" cy="64" r="54" fill="url(#helmShine)" stroke="#caa64a" stroke-width="1.5"/>
+          <!-- visor -->
+          <path d="M60 60 q40 30 80 0 q-4 26 -40 26 q-36 0 -40 -26z" fill="url(#visor)" opacity=".95"/>
+          <ellipse cx="80" cy="50" rx="10" ry="5" fill="#fff" opacity=".25"/>
+          <!-- H emblem -->
+          <text x="100" y="34" text-anchor="middle" font-family="Oswald, sans-serif" font-size="22" font-weight="700" fill="#e9c46a">H</text>
+          <!-- side ears -->
+          <rect x="46" y="56" width="10" height="20" rx="4" fill="#caa64a"/>
+          <rect x="144" y="56" width="10" height="20" rx="4" fill="#caa64a"/>
+        </svg>
+        <div class="stage-disc"></div>
+      </div>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="univers.html">Explorer les 8 univers</a>
+        <a class="btn btn-ghost" href="#journey">Rejoindre l'aventure</a>
+      </div>
+    </div>
+
+    <!-- RIGHT : concept cards -->
+    <div class="concept-cards">
+      <div class="ccard">
+        <div class="ccard-thumb"><svg viewBox="0 0 24 24" width="26" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9C.8 8.6 2.5 5 6 5c2 0 3 1.2 4 2.5C11 6.2 12 5 14 5c3.5 0 5.2 3.6 3.5 7-2.5 4.5-9.5 9-9.5 9z"/></svg></div>
+        <div><h4>Cœur énergétique</h4><p>Le cœur représente l'énergie, la passion, le moteur intérieur.</p></div>
+      </div>
+      <div class="ccard">
+        <div class="ccard-thumb"><svg viewBox="0 0 24 24" width="26" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M4 10h16M10 4v16"/></svg></div>
+        <div><h4>Matériaux & finitions</h4><p>Métal, chrome, carbone, translucide, mat, glossy… Toutes les finitions sont possibles.</p></div>
+      </div>
+      <div class="ccard">
+        <div class="ccard-thumb"><svg viewBox="0 0 24 24" width="26" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+        <div><h4>Universel & unique</h4><p>Un personnage iconique qui traverse les univers et les générations.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= JOURNEY / COMING SOON ================= -->
+<section class="sec" id="journey">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">The journey begins…</span>
+      <h2 class="coming-soon">COMING SOON</h2>
+      <div class="heart-pulse">❤</div>
+      <p class="text-muted" style="max-width:520px;margin:18px auto 0;">
+        Plus qu'un art toy, une plateforme de créativité. Sois le premier informé du lancement de la collection.
+      </p>
+      <form class="news-form" id="newsForm">
+        <input type="email" id="newsEmail" placeholder="Ton adresse e-mail" required />
+        <button class="btn btn-primary" type="submit">Je m'inscris</button>
+      </form>
+      <div class="news-msg" id="newsMsg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="foot-tagline">
+        <a class="brand" href="#hero" style="margin-bottom:16px">
+          <span class="brand-badge"><span>H</span></span>
+          <span class="brand-name">THE&nbsp;HELMET</span>
+        </a>
+        <h3>Plus qu'un art toy.<br><span class="gold-text">Une plateforme de créativité.</span></h3>
+        <p>One soul. Infinite worlds.</p>
+      </div>
+
+      <div class="categories">
+        <div class="cat"><div class="cat-ico">🧍</div><span>Figurines</span></div>
+        <div class="cat"><div class="cat-ico">🚗</div><span>Véhicules</span></div>
+        <div class="cat"><div class="cat-ico">🎒</div><span>Accessoires</span></div>
+        <div class="cat"><div class="cat-ico">🛋️</div><span>Décoration</span></div>
+        <div class="cat"><div class="cat-ico">🤝</div><span>Collaborations</span></div>
+        <div class="cat"><div class="cat-ico">🧸</div><span>Art Toys</span></div>
+      </div>
+
+      <div>
+        <p class="eyebrow" style="margin-bottom:14px">Suivez l'aventure</p>
+        <div class="socials">
+          <a class="soc" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+          <a class="soc" href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 4c.5 2.3 2 3.8 4 4v3c-1.6 0-3-.5-4-1.3V15a5.5 5.5 0 11-5.5-5.5c.3 0 .6 0 .9.1v3.1a2.5 2.5 0 102 2.4V4h2.6z"/></svg></a>
+          <a class="soc" href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3-.4-4.4a2.6 2.6 0 00-1.8-1.8C18.4 5.4 12 5.4 12 5.4s-6.4 0-7.8.4A2.6 2.6 0 002.4 7.6C2 9 2 12 2 12s0 3 .4 4.4a2.6 2.6 0 001.8 1.8c1.4.4 7.8.4 7.8.4s6.4 0 7.8-.4a2.6 2.6 0 001.8-1.8C22 15 22 12 22 12zM10 15V9l5 3-5 3z"/></svg></a>
+          <a class="soc" href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-6.5 7.4L21.5 21H16l-4.3-5.6L6.8 21H3.7l7-8L3 3h5.6l3.9 5.1L17.5 3zm-1 16h1.6L7.6 4.7H5.9L16.5 19z"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="hashtags">
+        <span>#THEHELMET</span><span>#ARTTOYS</span><span>#INFINITEWORLDS</span>
+      </div>
+      <div class="copyright">© 2026 THE HELMET — Collectible Art Toys. Tous droits réservés.</div>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/app.js"></script>
+</body>
+</html>

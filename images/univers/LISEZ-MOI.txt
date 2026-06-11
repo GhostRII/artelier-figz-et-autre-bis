@@ -1,0 +1,8 @@
+PHOTOS DES PAGES UNIVERS
+========================
+
+Chaque dossier = un theme. Les pages utilisent les fichiers nommes
+<theme>-1.jpg (grande banniere), <theme>-2.jpg a <theme>-4.jpg (galerie).
+
+POUR METTRE TES PROPRES IMAGES : remplace simplement le fichier en
+gardant exactement le meme nom (format paysage conseille, ~1600px de large).
