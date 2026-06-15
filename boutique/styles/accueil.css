@@ -1,0 +1,162 @@
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg:#07060a; --line:#2c241a; --gold:#e8b54e; --gold-soft:#f7dd9a; --gold-deep:#a3741f;
+    --text:#efe9df; --muted:#9d9281;
+  }
+  html,body { height:100%; }
+  body {
+    background:var(--bg); color:var(--text); overflow:hidden;
+    font-family:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a { color:inherit; text-decoration:none; }
+  svg { display:block; }
+
+  /* ===================== HUB GRID ===================== */
+  .hub {
+    position:relative; height:100vh; width:100vw;
+    display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr;
+    gap:1px; background:linear-gradient(var(--line),var(--line));
+  }
+  .cell {
+    position:relative; overflow:hidden; display:flex; flex-direction:column; align-items:center;
+    padding:clamp(18px,3vh,34px) 18px; background:
+      radial-gradient(120% 90% at 50% 30%, #14110b 0%, #0a0809 60%, var(--bg) 100%);
+    transition:opacity .45s ease, background .5s ease;
+    opacity:0; animation:cellIn .8s ease forwards;
+  }
+  .cell:nth-child(1){animation-delay:.05s} .cell:nth-child(2){animation-delay:.18s}
+  .cell:nth-child(3){animation-delay:.31s} .cell:nth-child(4){animation-delay:.44s}
+  
+
+  /* accent glow that fades in on hover */
+  .cell::before {
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:0; transition:opacity .5s ease;
+    background:radial-gradient(60% 55% at 50% 48%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%);
+  }
+  .cell:hover::before { opacity:1; }
+  /* focus effect : dim the others */
+  .hub:hover .cell:not(:hover) { opacity:.5; }
+
+  /* ----- brand title (top) ----- */
+  .brand-title {
+    text-align:center; z-index:3; position:relative;
+    font-family:"Playfair Display","Didot",Georgia,serif; font-weight:700;
+    letter-spacing:.22em; text-transform:uppercase;
+    font-size:clamp(1.1rem,2.4vw,1.9rem);
+    background:linear-gradient(180deg,#fff 0%, var(--gold-soft) 60%, var(--gold-deep) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .brand-sub {
+    text-align:center; z-index:3; position:relative; margin-top:6px;
+    font-size:clamp(.6rem,1.1vw,.72rem); letter-spacing:.32em; text-transform:uppercase; color:var(--muted);
+  }
+
+  /* ----- vitrine (glass dome + pedestal + figure) ----- */
+  .vitrine-link { flex:1; display:flex; align-items:center; justify-content:center; width:100%; z-index:2; }
+  .vitrine { position:relative; width:clamp(150px,17vw,230px); height:clamp(190px,34vh,320px); display:flex; align-items:flex-end; justify-content:center; }
+  /* glass dome */
+  .dome {
+    position:absolute; left:50%; top:0; transform:translateX(-50%);
+    width:100%; height:92%; border-radius:50% 50% 46% 46% / 56% 56% 44% 44%;
+    background:linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,.015) 45%, rgba(255,255,255,.05));
+    border:1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    box-shadow:inset 0 14px 40px rgba(255,255,255,.06), inset 0 -10px 30px rgba(0,0,0,.5);
+    transition:border-color .45s ease, box-shadow .45s ease;
+    overflow:hidden;
+  }
+  .dome::after { /* glass highlight streak */
+    content:""; position:absolute; top:6%; left:14%; width:26%; height:62%;
+    background:linear-gradient(120deg, rgba(255,255,255,.18), transparent 70%);
+    border-radius:50%; filter:blur(2px);
+  }
+  .cell:hover .dome { border-color:var(--accent); box-shadow:inset 0 14px 40px rgba(255,255,255,.1), inset 0 -10px 30px rgba(0,0,0,.5), 0 0 40px -6px color-mix(in srgb, var(--accent) 60%, transparent); }
+  /* pedestal */
+  .pedestal {
+    position:absolute; bottom:-2%; left:50%; transform:translateX(-50%);
+    width:78%; height:11%; border-radius:50%;
+    background:radial-gradient(ellipse at center, #1a160e 0%, #0c0a07 70%);
+    border:1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    box-shadow:0 10px 26px rgba(0,0,0,.6);
+  }
+  .pedestal::before {
+    content:""; position:absolute; inset:18% 14%; border-radius:50%;
+    box-shadow:0 0 22px color-mix(in srgb, var(--accent) 55%, transparent);
+  }
+  /* figure */
+  .fig { position:relative; z-index:2; height:78%; margin-bottom:6%; display:flex; align-items:flex-end;
+    filter:drop-shadow(0 14px 22px rgba(0,0,0,.55)); animation:float 6s ease-in-out infinite; transition:transform .45s ease; }
+  .fig svg { height:100%; width:auto; }
+  .cell:hover .fig { transform:translateY(-8px) scale(1.04); }
+  
+
+  /* ----- hidden hover menu (bottom) ----- */
+  .cell-menu {
+    position:relative; z-index:4; display:flex; gap:clamp(14px,2vw,30px); justify-content:center; align-items:center;
+    padding-top:14px; opacity:0; transform:translateY(12px); transition:opacity .4s ease, transform .4s ease;
+    pointer-events:none;
+  }
+  .cell:hover .cell-menu { opacity:1; transform:translateY(0); pointer-events:auto; }
+  .cell-menu a {
+    position:relative; font-size:clamp(.66rem,1.1vw,.8rem); letter-spacing:.16em; text-transform:uppercase;
+    color:var(--text); padding:6px 2px; transition:color .25s;
+  }
+  .cell-menu a::after { content:""; position:absolute; left:0; bottom:0; height:1.5px; width:0; background:var(--accent); transition:width .3s; }
+  .cell-menu a:hover { color:var(--accent); }
+  .cell-menu a:hover::after { width:100%; }
+  /* small "enter" hint shown when NOT hovering */
+  .enter-hint {
+    position:absolute; bottom:clamp(16px,3vh,30px); left:50%; transform:translateX(-50%);
+    font-size:.62rem; letter-spacing:.28em; text-transform:uppercase; color:var(--muted);
+    opacity:.65; transition:opacity .35s; z-index:3;
+  }
+  .cell:hover .enter-hint { opacity:0; }
+
+  /* ===================== CENTER MEDALLION ===================== */
+  .hub-center {
+    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:20; pointer-events:none;
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+  }
+  .medallion {
+    width:clamp(64px,8vw,96px); height:clamp(64px,8vw,96px); border-radius:50%;
+    display:grid; place-items:center;
+    background:radial-gradient(circle at 38% 32%, #1c160d, #060505 72%);
+    border:1.5px solid var(--gold); box-shadow:0 0 26px rgba(232,181,78,.4), inset 0 0 16px rgba(232,181,78,.18);
+  }
+  .medallion svg { width:46%; height:46%; color:var(--gold); }
+  .hub-center .maker { font-family:"Playfair Display",Georgia,serif; letter-spacing:.34em; font-size:clamp(.6rem,1vw,.74rem); color:var(--gold-soft); text-transform:uppercase; }
+  .hub-center .tagline { font-size:.54rem; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); }
+
+  /* energy gauge animation (racer) */
+  .ecore-seg { animation:charge 2.2s ease-in-out infinite; }
+  .ecore-seg:nth-child(1){animation-delay:0s}.ecore-seg:nth-child(2){animation-delay:.18s}
+  .ecore-seg:nth-child(3){animation-delay:.36s}.ecore-seg:nth-child(4){animation-delay:.54s}.ecore-seg:nth-child(5){animation-delay:.72s}
+  
+  /* helmet heart / core star subtle pulse */
+  .hbeat { animation:beat 1.7s ease-in-out infinite; transform-origin:center; }
+  
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width:760px), (pointer:coarse) {
+    body { overflow:auto; }
+    .hub { height:auto; grid-template-columns:1fr; grid-template-rows:none; }
+    .cell { min-height:88vh; }
+    .hub:hover .cell:not(:hover) { opacity:1; }       /* no dimming on touch */
+    .cell-menu { opacity:1; transform:none; pointer-events:auto; }  /* menu always visible */
+    .cell::before { opacity:.6; }
+    .enter-hint { display:none; }
+    .hub-center { display:none; }                      /* medallion hidden when stacked */
+  }
+
+
+/* ===================== MODELES 3D (model-viewer) ===================== */
+.mv3d { position:absolute; inset:0; width:100%; height:100%; opacity:0; pointer-events:none;
+  background:transparent; --poster-color:transparent; transition:opacity .6s ease; z-index:2; }
+.model-ready .mv3d { opacity:1; }
+.model-ready .mv-interactive { pointer-events:auto; }
+.model-ready .fig-fallback { opacity:0; visibility:hidden; transition:opacity .45s ease; }
+
+
+/* retour vers Figz */
+.back-to-figz{position:fixed;top:16px;left:18px;z-index:60;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9d9281;background:rgba(8,6,10,.6);border:1px solid #2c241a;padding:8px 14px;border-radius:999px;backdrop-filter:blur(8px);transition:all .25s;}
+.back-to-figz:hover{color:#e8b54e;border-color:#e8b54e;}

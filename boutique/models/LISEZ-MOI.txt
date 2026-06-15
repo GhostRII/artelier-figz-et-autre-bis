@@ -1,0 +1,11 @@
+DEPOSE TES MODELES 3D ICI (pages-figz/boutique/models/)
+========================================================
+
+Noms EXACTS attendus :
+  helmet.glb   -> The Helmet
+  spark.glb    -> The Spark
+  core.glb     -> The Core
+  racer.glb    -> Racer Spirit
+
+Tant qu'un fichier est absent, la figurine SVG s'affiche a la place.
+En local : ouvrir via serveur (XAMPP/python -m http.server), pas en double-clic.

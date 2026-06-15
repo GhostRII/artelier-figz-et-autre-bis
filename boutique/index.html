@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HADRIEN — Infinite Worlds. Collectible Art Toys.</title>
+<link rel="stylesheet" href="styles/accueil.css" />
+  <link rel="stylesheet" href="animations/accueil.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+<a href="../pages-figz/home/index.html" class="back-to-figz">← Figz</a>
+
+<!-- ============ MASTER SVG (gradients + figure symbols) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff0c0"/><stop offset="40%" stop-color="#e8b54e"/>
+      <stop offset="72%" stop-color="#c9952f"/><stop offset="100%" stop-color="#8a6418"/>
+    </linearGradient>
+    <linearGradient id="whiteGloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#d3d3d8"/>
+    </linearGradient>
+    <radialGradient id="faceGlow" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#fff6d8"/><stop offset="55%" stop-color="#f0c869"/><stop offset="100%" stop-color="#b8860b"/>
+    </radialGradient>
+    <radialGradient id="darkSphere" cx="38%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#2a2a30"/><stop offset="60%" stop-color="#0c0c0e"/><stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+    <radialGradient id="energy" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#fff4cc"/><stop offset="55%" stop-color="#ffb938"/><stop offset="100%" stop-color="#d98a1a"/>
+    </radialGradient>
+    <radialGradient id="hHelm" cx="35%" cy="28%" r="75%">
+      <stop offset="0%" stop-color="#3a3a40"/><stop offset="55%" stop-color="#161618"/><stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+    <linearGradient id="hVisor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#caa64a"/><stop offset="100%" stop-color="#5e4413"/>
+    </linearGradient>
+    <radialGradient id="hHeart" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#fff3cf"/><stop offset="60%" stop-color="#f0c869"/><stop offset="100%" stop-color="#b88a2e"/>
+    </radialGradient>
+    <linearGradient id="hBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1e22"/><stop offset="100%" stop-color="#050506"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <symbol id="sparkle" viewBox="-16 -16 32 32">
+      <path d="M0 -15 C2 -4 4 -2 15 0 C4 2 2 4 0 15 C-2 4 -4 2 -15 0 C-4 -2 -2 -4 0 -15 Z" fill="currentColor"/>
+    </symbol>
+
+    <!-- ===== THE HELMET ===== -->
+    <symbol id="fig-helmet" viewBox="0 0 200 260">
+      <rect x="74" y="206" width="20" height="34" rx="9" fill="url(#hBody)"/>
+      <rect x="106" y="206" width="20" height="34" rx="9" fill="url(#hBody)"/>
+      <ellipse cx="84" cy="244" rx="16" ry="8" fill="#0c0c0d" stroke="url(#gold)" stroke-width="1.5"/>
+      <ellipse cx="116" cy="244" rx="16" ry="8" fill="#0c0c0d" stroke="url(#gold)" stroke-width="1.5"/>
+      <rect x="34" y="120" width="20" height="60" rx="10" fill="url(#hBody)"/>
+      <rect x="146" y="120" width="20" height="60" rx="10" fill="url(#hBody)"/>
+      <circle cx="44" cy="186" r="13" fill="#0c0c0d" stroke="url(#gold)" stroke-width="1.5"/>
+      <circle cx="156" cy="186" r="13" fill="#0c0c0d" stroke="url(#gold)" stroke-width="1.5"/>
+      <rect x="58" y="116" width="84" height="100" rx="26" fill="url(#hBody)" stroke="#1c1c1f"/>
+      <rect x="58" y="150" width="84" height="6" fill="url(#gold)" opacity=".55"/>
+      <path class="hbeat" d="M100 150 C95 142 82 143 82 154 C82 164 100 176 100 176 C100 176 118 164 118 154 C118 143 105 142 100 150 Z" fill="url(#hHeart)"/>
+      <rect x="84" y="104" width="32" height="20" rx="8" fill="#0c0c0d" stroke="url(#gold)" stroke-width="1.2"/>
+      <circle cx="100" cy="64" r="54" fill="url(#hHelm)" stroke="url(#gold)" stroke-width="1.5"/>
+      <path d="M60 60 q40 30 80 0 q-4 26 -40 26 q-36 0 -40 -26z" fill="url(#hVisor)" opacity=".95"/>
+      <ellipse cx="80" cy="50" rx="10" ry="5" fill="#fff" opacity=".25"/>
+      <text x="100" y="34" text-anchor="middle" font-family="'Oswald',Arial,sans-serif" font-size="22" font-weight="700" fill="#e9c46a">H</text>
+      <rect x="46" y="56" width="10" height="20" rx="4" fill="url(#gold)"/>
+      <rect x="144" y="56" width="10" height="20" rx="4" fill="url(#gold)"/>
+    </symbol>
+
+    <!-- ===== THE SPARK ===== -->
+    <symbol id="fig-spark" viewBox="0 0 200 290">
+      <g fill="url(#whiteGloss)">
+        <ellipse cx="55" cy="193" rx="12" ry="18"/>
+        <ellipse cx="145" cy="193" rx="12" ry="18"/>
+        <ellipse cx="83" cy="259" rx="15" ry="8"/>
+        <ellipse cx="117" cy="259" rx="15" ry="8"/>
+        <path d="M100 263 C60 263 49 221 55 182 C59 153 60 130 70 108 C79 88 85 70 94 52 C99 41 101 26 104 12 C107 27 111 46 116 63 C122 52 130 60 132 82 C137 108 146 152 145 182 C151 221 140 263 100 263 Z"/>
+      </g>
+      <ellipse cx="82" cy="152" rx="10" ry="14" fill="#0b0b0d"/>
+      <ellipse cx="118" cy="152" rx="10" ry="14" fill="#0b0b0d"/>
+      <ellipse cx="78" cy="146" rx="3.4" ry="4.4" fill="#fff" opacity=".85"/>
+      <ellipse cx="114" cy="146" rx="3.4" ry="4.4" fill="#fff" opacity=".85"/>
+    </symbol>
+
+    <!-- ===== THE CORE ===== -->
+    <symbol id="fig-core" viewBox="0 0 220 330">
+      <g fill="#171717">
+        <path d="M70 158 C56 122 54 90 66 56 C70 80 76 94 84 102 L92 44 C96 72 100 88 106 98 L114 32 C118 68 122 86 128 98 L138 46 C142 76 148 92 156 100 C160 88 166 74 170 60 C180 94 180 130 172 160 Z"/>
+        <rect x="84" y="250" width="22" height="46" rx="10"/>
+        <rect x="114" y="250" width="22" height="46" rx="10"/>
+        <ellipse cx="95" cy="300" rx="17" ry="9"/>
+        <ellipse cx="125" cy="300" rx="17" ry="9"/>
+        <rect x="58" y="182" width="19" height="56" rx="9"/>
+        <rect x="143" y="182" width="19" height="56" rx="9"/>
+        <circle cx="67" cy="244" r="12"/>
+        <circle cx="153" cy="244" r="12"/>
+        <rect x="76" y="176" width="68" height="84" rx="26"/>
+        <circle cx="110" cy="128" r="50"/>
+      </g>
+      <path d="M80 298 h30M110 298 h30" stroke="url(#gold)" stroke-width="2" opacity=".7"/>
+      <rect x="58" y="222" width="19" height="4" fill="url(#gold)"/>
+      <rect x="143" y="222" width="19" height="4" fill="url(#gold)"/>
+      <rect x="76" y="246" width="68" height="5" fill="url(#gold)"/>
+      <path d="M110 178 v66" stroke="url(#gold)" stroke-width="1.5" opacity=".55"/>
+      <path d="M100 210 l3 -9 4 6 4 -6 4 6 4 -9 v12 h-19 Z" fill="url(#gold)"/>
+      <circle cx="110" cy="132" r="36" fill="url(#darkSphere)" stroke="url(#gold)" stroke-width="2.5"/>
+      <g class="hbeat" filter="url(#glow)">
+        <use href="#sparkle" x="98" y="104" width="24" height="24" fill="url(#faceGlow)"/>
+        <ellipse cx="98" cy="142" rx="6.5" ry="11" fill="url(#faceGlow)"/>
+        <ellipse cx="122" cy="142" rx="6.5" ry="11" fill="url(#faceGlow)"/>
+      </g>
+    </symbol>
+
+    <!-- ===== RACER SPIRIT ===== -->
+    <symbol id="fig-racer" viewBox="0 0 220 340">
+      <g fill="#17150f">
+        <rect x="86" y="258" width="22" height="46" rx="9"/>
+        <rect x="112" y="258" width="22" height="46" rx="9"/>
+        <ellipse cx="97" cy="307" rx="17" ry="9"/>
+        <ellipse cx="123" cy="307" rx="17" ry="9"/>
+        <rect x="55" y="184" width="19" height="58" rx="9"/>
+        <rect x="146" y="184" width="19" height="58" rx="9"/>
+        <circle cx="64" cy="248" r="12"/>
+        <circle cx="156" cy="248" r="12"/>
+        <rect x="74" y="178" width="72" height="86" rx="24"/>
+        <path d="M70 152 C54 130 52 100 60 74 C68 50 84 32 106 20 C120 13 134 12 142 16 C132 34 124 56 122 78 C138 96 150 122 148 150 C146 166 130 173 108 173 C88 173 78 164 70 152 Z"/>
+      </g>
+      <path d="M82 302 h30 M108 302 h30" stroke="url(#gold)" stroke-width="2" opacity=".7"/>
+      <rect x="55" y="220" width="19" height="4" fill="url(#gold)"/>
+      <rect x="146" y="220" width="19" height="4" fill="url(#gold)"/>
+      <path d="M84 198 c8 -7 44 -7 52 0" stroke="url(#gold)" stroke-width="1.5" fill="none" opacity=".5"/>
+      <rect x="74" y="254" width="72" height="5" fill="url(#gold)"/>
+      <rect x="99" y="196" width="22" height="56" rx="6" fill="#0a0806" stroke="url(#gold)" stroke-width="1.6"/>
+      <g>
+        <rect class="ecore-seg" x="103" y="242" width="14" height="7" rx="2" fill="url(#energy)"/>
+        <rect class="ecore-seg" x="103" y="232" width="14" height="7" rx="2" fill="url(#energy)"/>
+        <rect class="ecore-seg" x="103" y="222" width="14" height="7" rx="2" fill="url(#energy)"/>
+        <rect class="ecore-seg" x="103" y="212" width="14" height="7" rx="2" fill="url(#energy)"/>
+        <rect class="ecore-seg" x="103" y="202" width="14" height="7" rx="2" fill="url(#energy)"/>
+      </g>
+      <path d="M70 152 C54 130 52 100 60 74 C68 50 84 32 106 20 C120 13 134 12 142 16" fill="none" stroke="url(#gold)" stroke-width="2.4"/>
+      <path d="M104 28 C112 60 119 112 112 170" fill="none" stroke="url(#gold)" stroke-width="1.5" opacity=".55"/>
+      <path d="M78 116 L150 106 L150 134 L84 144 Z" fill="#0a0806" stroke="url(#gold)" stroke-width="1.4"/>
+      <g filter="url(#glow)">
+        <path d="M88 122 l20 -2.4 l-3.4 10 l-20 2.4 Z" fill="url(#energy)"/>
+        <path d="M119 118 l21 -2.4 l-3.4 10 l-21 2.4 Z" fill="url(#energy)"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ HUB ============ -->
+<main class="hub">
+
+  <!-- THE HELMET -->
+  <section class="cell" style="--accent:#e8b54e">
+    <div class="brand-title">The&nbsp;Helmet</div>
+    <div class="brand-sub">Collectible Art Toys</div>
+    <a class="vitrine-link" href="the_helmet/index.html" aria-label="Découvrir The Helmet">
+      <div class="vitrine">
+        <div class="dome"></div>
+        <div class="pedestal"></div>
+        <div class="fig">
+          <model-viewer class="mv3d" src="models/helmet.glb" alt="The Helmet" auto-rotate rotation-per-second="20deg" disable-zoom shadow-intensity="0.8" exposure="1.05" environment-image="neutral" interaction-prompt="none" poster=""></model-viewer>
+          <svg class="fig-fallback" viewBox="0 0 200 260"><use href="#fig-helmet"/></svg>
+        </div>
+      </div>
+    </a>
+    <nav class="cell-menu">
+      <a href="the_helmet/index.html">Découvrir</a>
+      <a href="the_helmet/configurateur.html">Personnaliser</a>
+      <a href="the_helmet/index.html">Collections</a>
+    </nav>
+    <div class="enter-hint">Survoler pour entrer</div>
+  </section>
+
+  <!-- THE SPARK -->
+  <section class="cell" style="--accent:#cfd3d8">
+    <div class="brand-title">The&nbsp;Spark</div>
+    <div class="brand-sub">A Creature Born From a Spark</div>
+    <a class="vitrine-link" href="the_spark/index.html" aria-label="Découvrir The Spark">
+      <div class="vitrine">
+        <div class="dome"></div>
+        <div class="pedestal"></div>
+        <div class="fig">
+          <model-viewer class="mv3d" src="models/spark.glb" alt="The Spark" auto-rotate rotation-per-second="20deg" disable-zoom shadow-intensity="0.8" exposure="1.05" environment-image="neutral" interaction-prompt="none" poster=""></model-viewer>
+          <svg class="fig-fallback" viewBox="0 0 200 290"><use href="#fig-spark"/></svg>
+        </div>
+      </div>
+    </a>
+    <nav class="cell-menu">
+      <a href="the_spark/index.html">Découvrir</a>
+      <a href="the_spark/configurateur.html">Personnaliser</a>
+      <a href="the_spark/index.html">Collections</a>
+    </nav>
+    <div class="enter-hint">Survoler pour entrer</div>
+  </section>
+
+  <!-- THE CORE -->
+  <section class="cell" style="--accent:#f0c869">
+    <div class="brand-title">The&nbsp;Core</div>
+    <div class="brand-sub">Born From Energy. Built For Worlds.</div>
+    <a class="vitrine-link" href="the_core/index.html" aria-label="Découvrir The Core">
+      <div class="vitrine">
+        <div class="dome"></div>
+        <div class="pedestal"></div>
+        <div class="fig">
+          <model-viewer class="mv3d" src="models/core.glb" alt="The Core" auto-rotate rotation-per-second="20deg" disable-zoom shadow-intensity="0.8" exposure="1.05" environment-image="neutral" interaction-prompt="none" poster=""></model-viewer>
+          <svg class="fig-fallback" viewBox="0 0 220 330"><use href="#fig-core"/></svg>
+        </div>
+      </div>
+    </a>
+    <nav class="cell-menu">
+      <a href="the_core/index.html">Découvrir</a>
+      <a href="the_core/configurateur.html">Personnaliser</a>
+      <a href="the_core/index.html">Collections</a>
+    </nav>
+    <div class="enter-hint">Survoler pour entrer</div>
+  </section>
+
+  <!-- RACER SPIRIT -->
+  <section class="cell" style="--accent:#ffb938">
+    <div class="brand-title">Racer&nbsp;Spirit</div>
+    <div class="brand-sub">Born From Speed. Driven By Energy.</div>
+    <a class="vitrine-link" href="racer_spirit/index.html" aria-label="Découvrir Racer Spirit">
+      <div class="vitrine">
+        <div class="dome"></div>
+        <div class="pedestal"></div>
+        <div class="fig">
+          <model-viewer class="mv3d" src="models/racer.glb" alt="Racer Spirit" auto-rotate rotation-per-second="20deg" disable-zoom shadow-intensity="0.8" exposure="1.05" environment-image="neutral" interaction-prompt="none" poster=""></model-viewer>
+          <svg class="fig-fallback" viewBox="0 0 220 340"><use href="#fig-racer"/></svg>
+        </div>
+      </div>
+    </a>
+    <nav class="cell-menu">
+      <a href="racer_spirit/index.html">Découvrir</a>
+      <a href="racer_spirit/configurateur.html">Personnaliser</a>
+      <a href="racer_spirit/index.html">Collections</a>
+    </nav>
+    <div class="enter-hint">Survoler pour entrer</div>
+  </section>
+
+  <!-- center medallion -->
+  <div class="hub-center">
+    <div class="medallion"><svg viewBox="-16 -16 32 32"><use href="#sparkle"/></svg></div>
+    <div class="maker">Hadrien</div>
+    <div class="tagline">Infinite Worlds</div>
+  </div>
+
+</main>
+
+<script src="scripts/accueil.js"></script>
+</body>
+</html>

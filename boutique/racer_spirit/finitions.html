@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RACER SPIRIT — Finitions</title>
+<link rel="stylesheet" href="styles/base.css" />
+<link rel="stylesheet" href="animations/base.css" />
+<link rel="stylesheet" href="styles/pages.css" />
+</head>
+<body class="souspage">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="rgold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff0c0"/><stop offset="40%" stop-color="#e8b54e"/>
+      <stop offset="72%" stop-color="#c9952f"/><stop offset="100%" stop-color="#8a6418"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f8fa"/><stop offset="32%" stop-color="#b7bdc6"/>
+      <stop offset="52%" stop-color="#eef0f3"/><stop offset="74%" stop-color="#969ca6"/><stop offset="100%" stop-color="#d2d7de"/>
+    </linearGradient>
+    <linearGradient id="irid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e7d6ff"/><stop offset="35%" stop-color="#cfeaff"/>
+      <stop offset="65%" stop-color="#ffd9ee"/><stop offset="100%" stop-color="#d9fff0"/>
+    </linearGradient>
+    <radialGradient id="energy" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#fff4cc"/><stop offset="55%" stop-color="#ffb938"/><stop offset="100%" stop-color="#d98a1a"/>
+    </radialGradient>
+    <filter id="rglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- brand mark : aerodynamic drop -->
+    <symbol id="rmark" viewBox="0 0 60 80">
+      <path d="M18 64 C8 52 7 34 12 22 C16 12 24 6 34 4 C30 16 27 30 28 40 C36 48 42 56 40 64 C38 72 28 74 18 64 Z" fill="currentColor"/>
+    </symbol>
+
+    <!-- RACER SPIRIT figure : .shell inherits fill from <use> -->
+    <symbol id="racer" viewBox="0 0 220 340">
+      <!-- legs -->
+      <rect class="shell" x="86" y="258" width="22" height="46" rx="9"/>
+      <rect class="shell" x="112" y="258" width="22" height="46" rx="9"/>
+      <ellipse class="shell" cx="97" cy="307" rx="17" ry="9"/>
+      <ellipse class="shell" cx="123" cy="307" rx="17" ry="9"/>
+      <path d="M82 302 h30 M108 302 h30" stroke="url(#rgold)" stroke-width="2" opacity=".7"/>
+      <!-- arms -->
+      <rect class="shell" x="55" y="184" width="19" height="58" rx="9"/>
+      <rect class="shell" x="146" y="184" width="19" height="58" rx="9"/>
+      <circle class="shell" cx="64" cy="248" r="12"/>
+      <circle class="shell" cx="156" cy="248" r="12"/>
+      <rect x="55" y="220" width="19" height="4" fill="url(#rgold)"/>
+      <rect x="146" y="220" width="19" height="4" fill="url(#rgold)"/>
+      <!-- torso -->
+      <rect class="shell" x="74" y="178" width="72" height="86" rx="24"/>
+      <path d="M84 198 c8 -7 44 -7 52 0" stroke="url(#rgold)" stroke-width="1.5" fill="none" opacity=".5"/>
+      <rect x="74" y="254" width="72" height="5" fill="url(#rgold)"/>
+      <!-- ENERGY CORE gauge -->
+      <rect x="99" y="196" width="22" height="56" rx="6" fill="#0a0806" stroke="url(#rgold)" stroke-width="1.6"/>
+      <g class="ecore">
+        <rect class="ecore-seg" x="103" y="242" width="14" height="7" rx="2" fill="url(#energy)"/>
+        <rect class="ecore-seg" x="103" y="232" width="14" height="7" rx="2" fill="url(#energy)"/>
+        <rect class="ecore-seg" x="103" y="222" width="14" height="7" rx="2" fill="url(#energy)"/>
+        <rect class="ecore-seg" x="103" y="212" width="14" height="7" rx="2" fill="url(#energy)"/>
+        <rect class="ecore-seg" x="103" y="202" width="14" height="7" rx="2" fill="url(#energy)"/>
+      </g>
+      <!-- head : aerodynamic swept teardrop -->
+      <path class="shell" d="M70 152 C54 130 52 100 60 74 C68 50 84 32 106 20 C120 13 134 12 142 16
+        C132 34 124 56 122 78 C138 96 150 122 148 150 C146 166 130 173 108 173 C88 173 78 164 70 152 Z"/>
+      <path d="M70 152 C54 130 52 100 60 74 C68 50 84 32 106 20 C120 13 134 12 142 16" fill="none" stroke="url(#rgold)" stroke-width="2.4"/>
+      <path d="M104 28 C112 60 119 112 112 170" fill="none" stroke="url(#rgold)" stroke-width="1.5" opacity=".55"/>
+      <!-- visor -->
+      <path d="M78 116 L150 106 L150 134 L84 144 Z" fill="#0a0806" stroke="url(#rgold)" stroke-width="1.4"/>
+      <g class="glow-eyes" filter="url(#rglow)">
+        <path d="M88 122 l20 -2.4 l-3.4 10 l-20 2.4 Z" fill="url(#energy)"/>
+        <path d="M119 118 l21 -2.4 l-3.4 10 l-21 2.4 Z" fill="url(#energy)"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav" id="navbar">
+  <a class="brand" href="index.html">
+    <svg class="b-mark" viewBox="0 0 60 80" style="color:var(--gold)"><use href="#rmark"/></svg>
+    <span class="brand-name">RACER&nbsp;SPIRIT</span>
+  </a>
+  <nav class="links" id="navLinks">
+    <a class="back-boutique" href="../index.html">← Boutique</a>
+    <a href="index.html">Racer Spirit</a>
+    <a href="manifeste.html">Manifeste</a>
+    <a href="family.html">Family</a>
+    <a href="univers.html">Univers</a>
+    <a href="finitions.html" class="current">Finitions</a>
+    <a href="tailles.html">Tailles</a>
+    <a href="lifestyle.html">Lifestyle</a>
+    <a href="configurateur.html">Configurateur</a>
+    <a class="nav-cta" href="index.html#journey">Coming Soon</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- ================= FINISHES (6) ================= -->
+<section class="sec" id="finishes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Premium Materials & Finishes</span>
+      <h2>Matières d'exception</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="fig-grid g6 reveal" id="finishesGrid"></div>
+  </div>
+</section>
+
+<!-- ================= RETOUR ================= -->
+<section class="sec souspage-cta">
+  <div class="wrap">
+    <div class="hero-cta">
+      <a class="btn btn-ghost" href="index.html">← Retour à Racer Spirit</a>
+      <a class="btn btn-primary" href="index.html#journey">Rejoindre l'aventure</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="foot-brand">
+        <a class="brand" href="#hero">
+          <svg class="b-mark" viewBox="0 0 60 80" style="color:var(--gold)"><use href="#rmark"/></svg>
+          <span class="brand-name">RACER&nbsp;SPIRIT</span>
+        </a>
+        <h3>Born from speed.<br><span class="gold-text">Driven by energy.</span></h3>
+        <p>Une forme. Une attitude. Un esprit.</p>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:14px">Suivez l'aventure</p>
+        <div class="socials">
+          <a class="soc" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+          <a class="soc" href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 4c.5 2.3 2 3.8 4 4v3c-1.6 0-3-.5-4-1.3V15a5.5 5.5 0 11-5.5-5.5c.3 0 .6 0 .9.1v3.1a2.5 2.5 0 102 2.4V4h2.6z"/></svg></a>
+          <a class="soc" href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3-.4-4.4a2.6 2.6 0 00-1.8-1.8C18.4 5.4 12 5.4 12 5.4s-6.4 0-7.8.4A2.6 2.6 0 002.4 7.6C2 9 2 12 2 12s0 3 .4 4.4a2.6 2.6 0 001.8 1.8c1.4.4 7.8.4 7.8.4s6.4 0 7.8-.4a2.6 2.6 0 001.8-1.8C22 15 22 12 22 12zM10 15V9l5 3-5 3z"/></svg></a>
+          <a class="soc" href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-6.5 7.4L21.5 21H16l-4.3-5.6L6.8 21H3.7l7-8L3 3h5.6l3.9 5.1L17.5 3zm-1 16h1.6L7.6 4.7H5.9L16.5 19z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="hashtags"><span>#RACERSPIRIT</span><span>#BORNFROMSPEED</span><span>#ONESPIRIT</span></div>
+      <div class="copyright">© 2026 RACER SPIRIT by Hadrien — Collectible Art Toy. Tous droits réservés.</div>
+    </div>
+  </div>
+</footer>
+<script src="scripts/app.js"></script>
+</body>
+</html>

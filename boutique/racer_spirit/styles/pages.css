@@ -1,0 +1,11 @@
+/* ===================== SOUS-PAGES ===================== */
+body.souspage section:first-of-type { padding-top: clamp(120px, 16vh, 160px); }
+.souspage-cta { text-align: center; padding-top: 10px; }
+.souspage-cta .hero-cta { justify-content: center; }
+
+/* lien de la page courante dans la navbar */
+nav.links a.current { color: var(--energy); }
+nav.links a.current::after { width: 100%; }
+
+/* cartes univers cliquables */
+.worlds-grid .world { cursor: pointer; }
