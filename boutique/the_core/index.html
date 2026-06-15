@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>THE CORE — Born From Energy. Built For Worlds.</title>
+<link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="animations/base.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<!-- ============ MASTER SVG (symbols + gradients) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff0c0"/><stop offset="40%" stop-color="#e8b54e"/>
+      <stop offset="72%" stop-color="#c9952f"/><stop offset="100%" stop-color="#8a6418"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f8fa"/><stop offset="32%" stop-color="#b7bdc6"/>
+      <stop offset="52%" stop-color="#eef0f3"/><stop offset="74%" stop-color="#969ca6"/><stop offset="100%" stop-color="#d2d7de"/>
+    </linearGradient>
+    <linearGradient id="pearl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/><stop offset="30%" stop-color="#ffe1f1"/>
+      <stop offset="55%" stop-color="#dcebff"/><stop offset="80%" stop-color="#e6fff1"/><stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff3b6b"/><stop offset="30%" stop-color="#ffd23b"/>
+      <stop offset="55%" stop-color="#3bff8a"/><stop offset="80%" stop-color="#3bc4ff"/><stop offset="100%" stop-color="#b03bff"/>
+    </linearGradient>
+    <linearGradient id="galaxy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a1d52"/><stop offset="50%" stop-color="#5a3a9e"/><stop offset="100%" stop-color="#1a1233"/>
+    </linearGradient>
+    <radialGradient id="faceGlow" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#fff6d8"/><stop offset="55%" stop-color="#f0c869"/><stop offset="100%" stop-color="#b8860b"/>
+    </radialGradient>
+    <radialGradient id="darkSphere" cx="38%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#2a2a30"/><stop offset="60%" stop-color="#0c0c0e"/><stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- 4-point sparkle -->
+    <symbol id="sparkle" viewBox="-16 -16 32 32">
+      <path d="M0 -15 C2 -4 4 -2 15 0 C4 2 2 4 0 15 C-2 4 -4 2 -15 0 C-4 -2 -2 -4 0 -15 Z" fill="currentColor"/>
+    </symbol>
+
+    <!-- THE CORE figure : .shell pieces inherit fill from <use>, gold/face stay fixed -->
+    <symbol id="core" viewBox="0 0 220 330">
+      <!-- flame hair (behind) -->
+      <path class="shell" d="M70 158 C56 122 54 90 66 56 C70 80 76 94 84 102 L92 44
+        C96 72 100 88 106 98 L114 32 C118 68 122 86 128 98 L138 46
+        C142 76 148 92 156 100 C160 88 166 74 170 60 C180 94 180 130 172 160 Z"/>
+      <!-- legs -->
+      <rect class="shell" x="84" y="250" width="22" height="46" rx="10"/>
+      <rect class="shell" x="114" y="250" width="22" height="46" rx="10"/>
+      <ellipse class="shell" cx="95" cy="300" rx="17" ry="9"/>
+      <ellipse class="shell" cx="125" cy="300" rx="17" ry="9"/>
+      <path d="M80 298 h30" stroke="url(#gold)" stroke-width="2" opacity=".7"/>
+      <path d="M110 298 h30" stroke="url(#gold)" stroke-width="2" opacity=".7"/>
+      <!-- arms -->
+      <rect class="shell" x="58" y="182" width="19" height="56" rx="9"/>
+      <rect class="shell" x="143" y="182" width="19" height="56" rx="9"/>
+      <circle class="shell" cx="67" cy="244" r="12"/>
+      <circle class="shell" cx="153" cy="244" r="12"/>
+      <rect x="58" y="222" width="19" height="4" fill="url(#gold)"/>
+      <rect x="143" y="222" width="19" height="4" fill="url(#gold)"/>
+      <!-- torso -->
+      <rect class="shell" x="76" y="176" width="68" height="84" rx="26"/>
+      <rect x="76" y="246" width="68" height="5" fill="url(#gold)"/>
+      <path d="M110 178 v66" stroke="url(#gold)" stroke-width="1.5" opacity=".55"/>
+      <!-- crown emblem -->
+      <path d="M101 212 l3 -9 4 6 4 -6 4 6 4 -9 v12 h-19 Z" transform="translate(-4,-6)" fill="url(#gold)"/>
+      <!-- head sphere -->
+      <circle class="shell" cx="110" cy="128" r="50"/>
+      <!-- face plate -->
+      <circle cx="110" cy="132" r="36" fill="url(#darkSphere)" stroke="url(#gold)" stroke-width="2.5"/>
+      <!-- glowing face -->
+      <g class="glow-face" filter="url(#glow)">
+        <use href="#sparkle" x="98" y="104" width="24" height="24" fill="url(#faceGlow)"/>
+        <ellipse cx="98" cy="142" rx="6.5" ry="11" fill="url(#faceGlow)"/>
+        <ellipse cx="122" cy="142" rx="6.5" ry="11" fill="url(#faceGlow)"/>
+      </g>
+    </symbol>
+
+    <!-- CORE head only (for details / expressions) -->
+    <symbol id="core-head" viewBox="0 0 220 200">
+      <path class="shell" d="M70 120 C56 84 54 52 66 18 C70 42 76 56 84 64 L92 8
+        C96 36 100 52 106 62 L114 -4 C118 32 122 50 128 62 L138 10
+        C142 40 148 56 156 64 C160 52 166 38 170 24 C180 58 180 94 172 124 Z" transform="translate(0,40)"/>
+      <circle class="shell" cx="110" cy="118" r="50"/>
+      <circle cx="110" cy="122" r="36" fill="url(#darkSphere)" stroke="url(#gold)" stroke-width="2.5"/>
+      <g class="glow-face" filter="url(#glow)">
+        <use href="#sparkle" x="98" y="94" width="24" height="24" fill="url(#faceGlow)"/>
+        <ellipse cx="98" cy="132" rx="6.5" ry="11" fill="url(#faceGlow)"/>
+        <ellipse cx="122" cy="132" rx="6.5" ry="11" fill="url(#faceGlow)"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav" id="navbar">
+  <a class="brand" href="#hero">
+    <svg class="b-star" viewBox="-16 -16 32 32"><use href="#sparkle"/></svg>
+    <span class="brand-name">THE&nbsp;CORE</span>
+  </a>
+  <nav class="links" id="navLinks">
+    <a class="back-boutique" href="../index.html">← Boutique</a>
+    <a href="manifeste.html">Manifeste</a>
+    <a href="details.html">Détails</a>
+    <a href="collection.html">Collection</a>
+    <a href="univers.html">Univers</a>
+    <a href="lifestyle.html">Lifestyle</a>
+    <a href="configurateur.html">Configurateur</a>
+    <a class="nav-cta" href="#journey">Coming Soon</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div style="position:relative; z-index:3; text-align:center;">
+    <span class="eyebrow">Born From Energy. Built For Worlds.</span>
+    <h1 class="hero-title">THE CORE</h1>
+  </div>
+
+  <div class="hero-grid">
+    <!-- LEFT values -->
+    <div class="val-col left">
+      <div class="val">
+        <svg class="v-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+        <h4>Energy</h4><p>Pure. Endless.</p>
+      </div>
+      <div class="val">
+        <svg class="v-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7l4 4 5-6 5 6 4-4v11H3V7z"/></svg>
+        <h4>Design</h4><p>Timeless. Iconic. Collectible.</p>
+      </div>
+      <div class="val">
+        <svg class="v-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-9C.8 8.6 2.5 5 6 5c2 0 3 1.2 4 2.5C11 6.2 12 5 14 5c3.5 0 5.2 3.6 3.5 7-2.5 4.5-9.5 9-9.5 9z"/></svg>
+        <h4>Emotion</h4><p>Connecting every heart. Everywhere.</p>
+      </div>
+    </div>
+
+    <!-- CENTER figure -->
+    <div class="hero-stage">
+      <model-viewer class="mv3d mv-interactive" src="../models/core.glb" alt="The Core" camera-controls auto-rotate rotation-per-second="20deg" disable-zoom shadow-intensity="0.8" exposure="1.05" environment-image="neutral" interaction-prompt="none" poster=""></model-viewer>
+      <div class="energy-ring"></div>
+      <svg class="core-hero fig-fallback" viewBox="0 0 220 330"><use href="#core" style="color:#171717"/></svg>
+      <div class="core-pedestal"></div>
+    </div>
+
+    <!-- RIGHT values -->
+    <div class="val-col right">
+      <div class="val">
+        <svg class="v-ico" viewBox="-16 -16 32 32"><use href="#sparkle" fill="currentColor"/></svg>
+        <h4>Universal</h4><p>Beyond age. Beyond culture. Beyond limits.</p>
+      </div>
+      <div class="val">
+        <svg class="v-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8a4 4 0 100 8c2 0 3-1.5 5-4 2 2.5 3 4 5 4a4 4 0 100-8c-2 0-3 1.5-5 4-2-2.5-3-4-5-4z"/></svg>
+        <h4>Infinite</h4><p>One Core. Infinite possibilities.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-cap">
+    <div class="big">ONE CORE. <span class="lite">INFINITE POSSIBILITIES.</span></div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="collection.html">Voir la collection</a>
+      <a class="btn btn-ghost" href="#journey">Rejoindre l'aventure</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VALUES STRIP ================= -->
+<section class="sec" id="values" style="padding-block: clamp(40px,6vw,70px);">
+  <div class="wrap">
+    <div class="values-strip reveal" id="valuesStrip"></div>
+  </div>
+</section>
+
+<!-- ================= QUOTE ================= -->
+<section class="sec" id="quote">
+  <div class="wrap reveal">
+    <blockquote>« The Core n'est pas qu'un personnage.<span class="gold-text">C'est un univers. »</span></blockquote>
+    <div class="signature" style="font-family:'Brush Script MT','Segoe Script',cursive; color:var(--gold); font-size:2rem; margin-top:24px;">Hadrien</div>
+  </div>
+</section>
+
+<!-- ================= COMING SOON ================= -->
+<section class="sec" id="journey">
+  <div class="wrap reveal">
+    <span class="eyebrow">The universe is waiting.</span>
+    <h2 class="coming-soon">COMING SOON</h2>
+    <svg class="star-beat" viewBox="-16 -16 32 32"><use href="#sparkle" fill="currentColor"/></svg>
+    <p class="muted" style="max-width:520px;margin:18px auto 0;">Born from energy, built for worlds. Sois le premier informé du lancement de THE CORE.</p>
+    <form class="news-form" id="newsForm">
+      <input type="email" id="newsEmail" placeholder="Ton adresse e-mail" required />
+      <button class="btn btn-primary" type="submit">Je m'inscris</button>
+    </form>
+    <div class="news-msg" id="newsMsg"></div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="foot-brand">
+        <a class="brand" href="#hero">
+          <svg class="b-star" viewBox="-16 -16 32 32"><use href="#sparkle"/></svg>
+          <span class="brand-name">THE&nbsp;CORE</span>
+        </a>
+        <h3>Born from energy.<br><span class="gold-text">Built for worlds.</span></h3>
+        <p>One Core. Infinite possibilities.</p>
+        <div class="signature">Hadrien</div>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:14px">Suivez l'aventure</p>
+        <div class="socials">
+          <a class="soc" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+          <a class="soc" href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 4c.5 2.3 2 3.8 4 4v3c-1.6 0-3-.5-4-1.3V15a5.5 5.5 0 11-5.5-5.5c.3 0 .6 0 .9.1v3.1a2.5 2.5 0 102 2.4V4h2.6z"/></svg></a>
+          <a class="soc" href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3-.4-4.4a2.6 2.6 0 00-1.8-1.8C18.4 5.4 12 5.4 12 5.4s-6.4 0-7.8.4A2.6 2.6 0 002.4 7.6C2 9 2 12 2 12s0 3 .4 4.4a2.6 2.6 0 001.8 1.8c1.4.4 7.8.4 7.8.4s6.4 0 7.8-.4a2.6 2.6 0 001.8-1.8C22 15 22 12 22 12zM10 15V9l5 3-5 3z"/></svg></a>
+          <a class="soc" href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-6.5 7.4L21.5 21H16l-4.3-5.6L6.8 21H3.7l7-8L3 3h5.6l3.9 5.1L17.5 3zm-1 16h1.6L7.6 4.7H5.9L16.5 19z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="hashtags"><span>#THECORE</span><span>#BORNFROMENERGY</span><span>#INFINITEPOSSIBILITIES</span></div>
+      <div class="copyright">© 2026 THE CORE by Hadrien — Collectible Art Toy. Tous droits réservés.</div>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+/* ===================== SOUS-PAGES THE HELMET ===================== */
+
+/* en-tete de page (sous la navbar fixe) */
+.page-hero {
+  padding: clamp(120px, 18vh, 170px) 0 20px;
+  text-align: center;
+  background: radial-gradient(110% 80% at 50% 0%, #1a160f 0%, var(--bg) 60%), var(--bg);
+}
+.page-hero h1 { font-size: clamp(2.2rem, 6vw, 4rem); margin-top: 14px; }
+.page-intro { color: var(--muted); max-width: 560px; margin: 16px auto 0; }
+.page-cta { margin-top: 54px; }
+
+/* univers : grille pleine hauteur */
+.worlds-tall { padding-top: clamp(30px, 5vh, 50px); }
+.worlds-tall .worlds-grid { min-height: 70vh; }
+.worlds-tall .world { min-height: 70vh; }
+@media (max-width: 980px) {
+  .worlds-tall .worlds-grid { min-height: auto; }
+  .worlds-tall .world { min-height: 320px; }
+}
+
+/* concept : cartes plus genereuses */
+.feature-card { padding: 42px; }
+.feature-card h3 { font-size: 1.45rem; }
+.feature-card p { font-size: 1rem; }
+
+/* finitions : pastilles plus imposantes */
+.chips { gap: 16px; margin-top: 10px; }
+.chip { font-size: 1.05rem; padding: 16px 30px; gap: 12px; }
+.swatch { width: 22px; height: 22px; }
+
+/* vehicules : cartes plus imposantes */
+.veh-card { padding: 38px 20px; }
+.veh-emoji { font-size: 3.4rem; }
+.veh-card h4 { font-size: 1.15rem; }
+
+/* cartes univers cliquables */
+.worlds-grid .world { cursor: pointer; }

@@ -1,0 +1,53 @@
+/* ===================== CONFIGURATEUR ===================== */
+:root { --accent: var(--gold); }
+
+.config-sec { padding: clamp(120px, 16vh, 160px) 0 80px; }
+.config-head { text-align: center; margin-bottom: 40px; }
+.config-head h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-top: 12px; }
+.config-head p { color: var(--muted); margin-top: 10px; max-width: 560px; margin-inline: auto; }
+
+.config-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 26px; align-items: start; }
+
+/* ---- panneau des menus ---- */
+.cfg-panel { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+.cfg-step { padding: 26px 28px; border-bottom: 1px solid var(--line); }
+.cfg-step:last-child { border-bottom: none; }
+.cfg-step-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.cfg-num { width: 30px; height: 30px; border-radius: 50%; flex: 0 0 30px; display: grid; place-items: center;
+  border: 1px solid var(--accent); color: var(--accent); font-weight: 700; font-size: .85rem; }
+.cfg-step-head h3 { font-size: 1.05rem; letter-spacing: .06em; }
+.cfg-step-head small { margin-left: auto; color: var(--muted); font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; }
+.cfg-options { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.cfg-swatch { width: 44px; height: 44px; border-radius: 50%; cursor: pointer; border: 2px solid var(--line); transition: all .2s; }
+.cfg-swatch:hover { transform: translateY(-2px); }
+.cfg-swatch.sel { border-color: var(--accent); box-shadow: 0 0 14px -2px var(--accent); }
+
+.cfg-chip { padding: 10px 20px; border-radius: 999px; border: 1px solid var(--line); cursor: pointer;
+  font-size: .85rem; color: var(--text); background: none; transition: all .2s; }
+.cfg-chip:hover { border-color: var(--accent); }
+.cfg-chip.sel { border-color: var(--accent); color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+
+.cfg-empty { border: 1px dashed var(--line); border-radius: 12px; padding: 22px; text-align: center;
+  color: var(--muted); font-size: .85rem; width: 100%; }
+
+/* ---- apercu + prix ---- */
+.config-aside { position: sticky; top: 92px; display: flex; flex-direction: column; gap: 18px; }
+.preview-box { position: relative; aspect-ratio: 1 / 1.05; border: 1px solid var(--line); border-radius: 18px;
+  overflow: hidden; display: grid; place-items: center;
+  background: radial-gradient(80% 70% at 50% 40%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 70%), var(--panel); }
+.preview-box .cfg-fig { height: 82%; display: grid; place-items: center; }
+.preview-box .cfg-fig svg { height: 100%; width: auto; filter: drop-shadow(0 16px 24px rgba(0,0,0,.5)); }
+.preview-label { position: absolute; top: 14px; left: 16px; font-size: .66rem; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--muted); z-index: 3; }
+
+.price-box { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px; }
+.price-box .p-label { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.price-box .p-value { font-size: 2rem; font-weight: 800; color: var(--accent); margin-top: 6px; }
+.price-box .p-resume { margin-top: 10px; color: var(--muted); font-size: .84rem; line-height: 1.5; }
+.price-box .p-note { margin-top: 12px; font-size: .72rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; }
+
+@media (max-width: 920px) {
+  .config-grid { grid-template-columns: 1fr; }
+  .config-aside { position: static; order: -1; }
+}

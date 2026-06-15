@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>THE SPARK — A Creature Born From a Spark</title>
+<link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="animations/base.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<!-- ============ MASTER SVG (symbols + gradients, hidden) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="whiteGloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#d3d3d8"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f8fa"/><stop offset="32%" stop-color="#b7bdc6"/>
+      <stop offset="52%" stop-color="#eef0f3"/><stop offset="74%" stop-color="#969ca6"/>
+      <stop offset="100%" stop-color="#d2d7de"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff0c0"/><stop offset="38%" stop-color="#f0c869"/>
+      <stop offset="72%" stop-color="#c9952f"/><stop offset="100%" stop-color="#8a6418"/>
+    </linearGradient>
+    <linearGradient id="pearl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/><stop offset="30%" stop-color="#ffe1f1"/>
+      <stop offset="55%" stop-color="#dcebff"/><stop offset="80%" stop-color="#e6fff1"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <radialGradient id="allBlack" cx="35%" cy="28%" r="80%">
+      <stop offset="0%" stop-color="#35353d"/><stop offset="70%" stop-color="#0a0a0c"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <!-- spark body silhouette -->
+    <symbol id="spark-body" viewBox="0 0 200 290">
+      <ellipse cx="55" cy="193" rx="12" ry="18"/>
+      <ellipse cx="145" cy="193" rx="12" ry="18"/>
+      <ellipse cx="83" cy="259" rx="15" ry="8"/>
+      <ellipse cx="117" cy="259" rx="15" ry="8"/>
+      <path d="M100 263 C60 263 49 221 55 182 C59 153 60 130 70 108 C79 88 85 70 94 52
+               C99 41 101 26 104 12 C107 27 111 46 116 63 C122 52 130 60 132 82
+               C137 108 146 152 145 182 C151 221 140 263 100 263 Z"/>
+    </symbol>
+    <!-- eyes (front) -->
+    <symbol id="spark-eyes" viewBox="0 0 200 290">
+      <ellipse cx="82" cy="152" rx="10" ry="14" fill="#0b0b0d"/>
+      <ellipse cx="118" cy="152" rx="10" ry="14" fill="#0b0b0d"/>
+      <ellipse cx="78" cy="146" rx="3.4" ry="4.4" fill="#fff" opacity=".85"/>
+      <ellipse cx="114" cy="146" rx="3.4" ry="4.4" fill="#fff" opacity=".85"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav" id="navbar">
+  <a class="brand" href="#hero">
+    <svg class="mini-spark" viewBox="0 0 200 290"><use href="#spark-body" fill="var(--white)"/></svg>
+    <span class="brand-name">THE&nbsp;SPARK</span>
+  </a>
+  <nav class="links" id="navLinks">
+    <a class="back-boutique" href="../index.html">← Boutique</a>
+    <a href="variantes.html">Variantes</a>
+    <a href="editions.html">Éditions</a>
+    <a href="tailles.html">Tailles</a>
+    <a href="vehicules.html">Véhicules</a>
+    <a href="accessoires.html">Accessoires</a>
+    <a href="applications.html">Applications</a>
+    <a href="configurateur.html">Configurateur</a>
+    <a class="nav-cta" href="#journey">Coming Soon</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="hero-grid">
+    <div class="ethos">
+      <span class="eyebrow">Collectible Art Toy</span>
+      <h1 class="hero-title"><span class="thin">THE</span>SPARK</h1>
+      <p class="hero-tag">A creature born from a spark.</p>
+
+      <div class="ethos-block">
+        <div class="ethos-row"><b>MINIMAL.</b><b>UNIVERSAL.</b><b>ENDLESS.</b></div>
+        <div class="ethos-sep"></div>
+        <div class="ethos-row dim"><b>NO GENDER.</b><b>NO ANIMAL.</b><b>NO LIMIT.</b></div>
+        <div class="ethos-sep"></div>
+        <div class="ethos-row"><b>JUST ENERGY.</b><b>PURE.</b><b>ICONIC.</b></div>
+      </div>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="variantes.html">Voir les variantes</a>
+        <a class="btn btn-ghost" href="#journey">Rejoindre l'aventure</a>
+      </div>
+    </div>
+
+    <div class="hero-fig">
+      <model-viewer class="mv3d mv-interactive" src="../models/spark.glb" alt="The Spark" camera-controls auto-rotate rotation-per-second="20deg" disable-zoom shadow-intensity="0.8" exposure="1.05" environment-image="neutral" interaction-prompt="none" poster=""></model-viewer>
+      <div class="glow"></div>
+      <svg class="hero-spark fig-fallback" viewBox="0 0 200 290">
+        <use href="#spark-body" fill="url(#whiteGloss)"/>
+        <use href="#spark-eyes"/>
+      </svg>
+      <div class="pedestal"></div>
+      <div class="founder-tag"><b>ORIGINAL SPARK</b><span>Founders Edition</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VIEWS ================= -->
+<section class="sec" id="views">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Le personnage</span>
+      <h2>Une silhouette, tous les angles</h2>
+      <p>Une forme minimale, reconnaissable sous n'importe quel point de vue.</p>
+    </div>
+    <div class="views-grid">
+      <div class="view-card reveal">
+        <div class="view-fig v-front">
+          <svg class="body-svg" viewBox="0 0 200 290"><use href="#spark-body" fill="url(#whiteGloss)"/></svg>
+          <span class="eye l"></span><span class="eye r"></span>
+        </div>
+        <span class="label-mono">Front</span>
+      </div>
+      <div class="view-card reveal">
+        <div class="view-fig v-side">
+          <svg class="body-svg" viewBox="0 0 200 290"><use href="#spark-body" fill="url(#whiteGloss)"/></svg>
+          <span class="eye l"></span><span class="eye r"></span>
+        </div>
+        <span class="label-mono">Side</span>
+      </div>
+      <div class="view-card reveal">
+        <div class="view-fig v-back">
+          <svg class="body-svg" viewBox="0 0 200 290"><use href="#spark-body" fill="url(#whiteGloss)"/></svg>
+          <span class="seam"></span>
+        </div>
+        <span class="label-mono">Back</span>
+      </div>
+      <div class="view-card reveal">
+        <div class="view-fig v-34">
+          <svg class="body-svg" viewBox="0 0 200 290"><use href="#spark-body" fill="url(#whiteGloss)"/></svg>
+          <span class="eye l"></span><span class="eye r"></span>
+        </div>
+        <span class="label-mono">3/4 View</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMING SOON ================= -->
+<section class="sec" id="journey">
+  <div class="wrap reveal">
+    <span class="eyebrow">The journey begins…</span>
+    <h2 class="coming-soon">COMING SOON</h2>
+    <svg class="spark-beat" viewBox="0 0 200 290"><use href="#spark-body" fill="var(--white)"/></svg>
+    <p style="color:var(--muted);max-width:520px;margin:18px auto 0;">
+      Minimal. Universel. Sans limite. Sois le premier informé du lancement de THE SPARK.
+    </p>
+    <form class="news-form" id="newsForm">
+      <input type="email" id="newsEmail" placeholder="Ton adresse e-mail" required />
+      <button class="btn btn-primary" type="submit">Je m'inscris</button>
+    </form>
+    <div class="news-msg" id="newsMsg"></div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="foot-tagline">
+        <a class="brand" href="#hero">
+          <svg class="mini-spark" viewBox="0 0 200 290"><use href="#spark-body" fill="var(--white)"/></svg>
+          <span class="brand-name">THE&nbsp;SPARK</span>
+        </a>
+        <h3>Just energy. Pure. Iconic.</h3>
+        <p>A creature born from a spark.</p>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:14px">Suivez l'aventure</p>
+        <div class="socials">
+          <a class="soc" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+          <a class="soc" href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 4c.5 2.3 2 3.8 4 4v3c-1.6 0-3-.5-4-1.3V15a5.5 5.5 0 11-5.5-5.5c.3 0 .6 0 .9.1v3.1a2.5 2.5 0 102 2.4V4h2.6z"/></svg></a>
+          <a class="soc" href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3-.4-4.4a2.6 2.6 0 00-1.8-1.8C18.4 5.4 12 5.4 12 5.4s-6.4 0-7.8.4A2.6 2.6 0 002.4 7.6C2 9 2 12 2 12s0 3 .4 4.4a2.6 2.6 0 001.8 1.8c1.4.4 7.8.4 7.8.4s6.4 0 7.8-.4a2.6 2.6 0 001.8-1.8C22 15 22 12 22 12zM10 15V9l5 3-5 3z"/></svg></a>
+          <a class="soc" href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-6.5 7.4L21.5 21H16l-4.3-5.6L6.8 21H3.7l7-8L3 3h5.6l3.9 5.1L17.5 3zm-1 16h1.6L7.6 4.7H5.9L16.5 19z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="hashtags"><span>#THESPARK</span><span>#ARTTOY</span><span>#SPARKUNIVERSE</span></div>
+      <div class="copyright">© 2026 THE SPARK — Collectible Art Toy. Tous droits réservés.</div>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/app.js"></script>
+</body>
+</html>
