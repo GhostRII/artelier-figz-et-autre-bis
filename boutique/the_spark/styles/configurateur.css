@@ -36,8 +36,15 @@
 .preview-box { position: relative; aspect-ratio: 1 / 1.05; border: 1px solid var(--line); border-radius: 18px;
   overflow: hidden; display: grid; place-items: center;
   background: radial-gradient(80% 70% at 50% 40%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 70%), var(--panel); }
-.preview-box .cfg-fig { height: 82%; display: grid; place-items: center; }
+.preview-box .cfg-fig { height: 82%; display: grid; place-items: center; position: relative; z-index: 3; }
 .preview-box .cfg-fig svg { height: 100%; width: auto; filter: drop-shadow(0 16px 24px rgba(0,0,0,.5)); }
+
+/* ---- Le SVG reste prioritaire dans le configurateur pour la preview couleur ----
+   Le spark.glb ne contient pas de matériaux séparés (corps / yeux), donc les
+   changements de couleur ne peuvent pas s'appliquer sur le rendu 3D.
+   On garde le SVG au premier plan : la couleur du corps (cfg-skin) et la couleur
+   des yeux (cfg-eye) restent interactives et visibles quoi qu'il arrive. ---- */
+.model-ready .fig-fallback { opacity: 1 !important; visibility: visible !important; }
 .preview-label { position: absolute; top: 14px; left: 16px; font-size: .66rem; letter-spacing: .22em;
   text-transform: uppercase; color: var(--muted); z-index: 3; }
 

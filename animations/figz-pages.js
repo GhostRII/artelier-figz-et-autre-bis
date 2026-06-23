@@ -174,3 +174,20 @@ function filterGallery(chip, filter) {
   chip.classList.add('active');
   renderGallery(filter);
 }
+
+/* ── RENDU 3D DANS LES TOY-CARDS ──
+   Quand un modèle .glb charge, on révèle le model-viewer
+   et on cache directement le SVG de fallback. */
+document.querySelectorAll('model-viewer.mv3d').forEach(function(mv) {
+  function revelerModele() {
+    mv.parentElement.classList.add('model-ready');
+    var fallback = mv.parentElement.querySelector('.fig-fallback');
+    if (fallback) fallback.style.display = 'none';
+  }
+  mv.addEventListener('load', revelerModele);
+  /* Sécurité : si le modèle est déjà chargé (cache navigateur),
+     on applique la révélation après un court délai. */
+  setTimeout(function() {
+    if (mv.loaded) revelerModele();
+  }, 500);
+});

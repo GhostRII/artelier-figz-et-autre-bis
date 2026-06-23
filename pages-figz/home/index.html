@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Figz Collectible — Home</title>
   <link rel="stylesheet" href="../../styles/figz.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
 </head>
 <body>
 
@@ -215,7 +216,13 @@
         </div>
       </a>
       <a class="toy-card" href="../../boutique/the_spark/index.html" style="--toy:#cfd3d8">
-        <div class="toy-stage"><svg viewBox="0 0 200 290"><use href="#fig-spark"/></svg></div>
+        <div class="toy-stage">
+          <model-viewer class="mv3d" src="../../boutique/models/spark.glb" alt="The Spark"
+            auto-rotate rotation-per-second="18deg" disable-zoom
+            shadow-intensity="0.8" exposure="1.05" environment-image="neutral"
+            interaction-prompt="none"></model-viewer>
+          <svg class="fig-fallback" viewBox="0 0 200 290"><use href="#fig-spark"/></svg>
+        </div>
         <div class="toy-info">
           <h3>The Spark</h3>
           <p>A Creature Born From a Spark</p>
