@@ -61,6 +61,13 @@ if (MV) {
   MV.addEventListener('load', () => {
     Render3D.pret = true;
     console.log('[Render3D] Materiaux du modele :', MV.model.materials.map(m => m.name));
+    /* Révéler le 3D, masquer le SVG fallback */
+    const previewBox = MV.closest('.preview-box');
+    if (previewBox) {
+      previewBox.classList.add('model-ready');
+      const fallback = previewBox.querySelector('.fig-fallback');
+      if (fallback) fallback.style.display = 'none';
+    }
     if (derniereCouleur) Render3D.appliquerCouleur(derniereCouleur);
     if (dernierElement !== null) Render3D.appliquerElement(dernierElement);
   });
